@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomViewEditText">
+        <attr name="labelText" format="string" />
+        <attr name="hintText" format="string" />
+        <attr name="isPasswordTypeInput" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomCardDashboard">
+        <attr name="iconSrc" format="reference" />
+        <attr name="headlineText" format="string" />
+        <attr name="subHeadlineText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomToolbar">
+        <attr name="title" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleCanvasView">
+        <attr name="circleColor" format="color" />
+        <attr name="circleText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomAnalyzeTitle">
+        <attr name="itemCircleColor" format="color" />
+        <attr name="itemCircleText" format="string" />
+        <attr name="android:text" />
+    </declare-styleable>
+
+    <style name="RoundedSquare">
+        <item name="cornerSize">10%</item>
+    </style>
+</resources>
