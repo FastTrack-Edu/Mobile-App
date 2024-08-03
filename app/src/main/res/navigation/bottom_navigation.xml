@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/navigation_dashboard">
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.nizamsetiawan.app.fasttrackedu.views.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_lms"
+        android:name="com.nizamsetiawan.app.fasttrackedu.views.lms.LmsFragment"
+        android:label="fragment_lms"
+        tools:layout="@layout/fragment_lms" />
+
+    <fragment
+        android:id="@+id/navigation_event"
+        android:name="com.nizamsetiawan.app.fasttrackedu.views.event.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.nizamsetiawan.app.fasttrackedu.views.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.nizamsetiawan.app.fasttrackedu.views.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

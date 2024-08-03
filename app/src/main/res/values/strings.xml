@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">FastTrackEdu</string>
+    <string name="slogan">Pandu Suksesmu dengan FastTrack Edu!</string>
+    <string name="title_activity_bottom_navigation_bar">BottomNavigationBarActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Beranda</string>
+    <string name="title_notifications">Notifikasi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_lms">LMS</string>
+    <string name="title_event">Event</string>
+    <string name="title_profile">Profil</string>
 </resources>

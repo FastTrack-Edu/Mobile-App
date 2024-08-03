@@ -1,20 +1,19 @@
 package com.nizamsetiawan.app.fasttrackedu
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.LayoutInflater
+import com.nizamsetiawan.app.fasttrackedu.core.CoreActivity
+import com.nizamsetiawan.app.fasttrackedu.databinding.ActivityMainBinding
+import com.nizamsetiawan.app.fasttrackedu.views.auth.SplashScreenActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : CoreActivity<ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        startActivity(Intent(this@MainActivity, SplashScreenActivity::class.java))
+        finish()
     }
+
+    override fun setupBinding(layoutInflater: LayoutInflater): ActivityMainBinding =
+        ActivityMainBinding.inflate(layoutInflater)
 }

@@ -65,4 +65,28 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <!-- TextInputLayout -->
+    <style name="TextInputLayout" parent="Base.Theme.FastTrackEdu">
+        <!-- Layout Size -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!-- Box Corner Radius -->
+        <item name="boxCornerRadiusTopEnd">5dp</item>
+        <item name="boxCornerRadiusBottomStart">5dp</item>
+        <item name="boxCornerRadiusBottomEnd">5dp</item>
+        <item name="boxCornerRadiusTopStart">5dp</item>
+        <!-- Box Stroke -->
+        <item name="boxStrokeColor">@color/bgPrimary</item>
+    </style>
+
+    <!-- TextInputEditText -->
+    <style name="TextInputEditText" parent="RegularHeadline" >
+        <!-- Layout Size -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textprimary</item>
+        </style>
+
+
+
 </resources>
