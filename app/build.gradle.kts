@@ -90,4 +90,6 @@ dependencies {
     implementation (libs.androidx.paging.runtime.ktx)
     //others
     implementation(libs.glide)
+    //viewpager2
+    implementation(libs.androidx.viewpager2)
 }

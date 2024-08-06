@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.auth.RegisterActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/main_headline"
+            style="@style/BoldHeadlineStyle"
+            android:layout_marginTop="30dp"
+            android:text="@string/register_main_headline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/secondary_headline"
+            style="@style/RegularSubHeadline"
+            android:textAlignment="center"
+            android:paddingHorizontal="28dp"
+            android:text="@string/register_secondary_headline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_headline" />
+
+        <com.nizamsetiawan.app.fasttrackedu.components.CustomViewEditText
+            android:id="@+id/edt_name"
+            style="@style/DefinedEditTextLayoutSize"
+            app:labelText="@string/title_name"
+            app:hintText="@string/hint_input_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/secondary_headline" />
+
+
+        <com.nizamsetiawan.app.fasttrackedu.components.CustomViewEditText
+            android:id="@+id/edt_email"
+            style="@style/DefinedEditTextLayoutSize"
+            android:layout_marginTop="5dp"
+            app:hintText="@string/hint_input_email"
+            app:labelText="@string/title_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_name" />
+
+        <com.nizamsetiawan.app.fasttrackedu.components.CustomViewEditText
+            android:id="@+id/edt_password"
+            style="@style/DefinedEditTextLayoutSize"
+            android:layout_marginTop="5dp"
+            app:isPasswordTypeInput="true"
+            app:labelText="@string/title_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email" />
+
+        <com.nizamsetiawan.app.fasttrackedu.components.CustomViewEditText
+            android:id="@+id/confirm_password"
+            style="@style/DefinedEditTextLayoutSize"
+            android:layout_marginTop="5dp"
+            app:isPasswordTypeInput="true"
+            app:labelText="@string/title_confirm_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_checkbox_forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirm_password">
+
+            <CheckBox
+                android:id="@+id/cb_terms_conditions"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                style="@style/RegularSubHeadline"
+                android:text="@string/accept_terms_and_conditions"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_terms_conditions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_terms_conditions"
+                style="@style/RegularSubHeadline"
+                android:text="@string/terms_condition"
+                android:textColor="@color/primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/cb_terms_conditions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            style="@style/ButtonStyle"
+            android:layout_marginTop="10dp"
+            android:text="@string/title_sign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_checkbox_forgot_password" />
+
+        <TextView
+            android:id="@+id/tv_sub_headline_or"
+            style="@style/RegularSubHeadline"
+            android:layout_marginTop="5dp"
+            android:text="@string/sub_headline_or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_register" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_google"
+            style="@style/ButtonStyle.Secondary.WithIcon"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sub_headline_or" />
+
+        <TextView
+            android:id="@+id/tv_sub_headline"
+            style="@style/RegularSubHeadline"
+            android:layout_marginTop="7dp"
+            android:textColor="@color/textprimary"
+            android:text="@string/register_sub_headline_1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_btn_login"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_login_google" />
+
+        <TextView
+            android:id="@+id/tv_btn_login"
+            style="@style/RegularSubHeadline"
+            android:textColor="@color/primary"
+            android:layout_marginStart="4dp"
+            android:text="@string/register_sub_headline_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_sub_headline"
+            app:layout_constraintTop_toTopOf="@id/tv_sub_headline" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

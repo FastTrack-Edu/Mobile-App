@@ -37,7 +37,7 @@ object ApiConfig {
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL + "api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()

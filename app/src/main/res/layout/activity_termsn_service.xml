@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.auth.TermsnServiceActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mToolbar"
+        style="@style/ToolbarTextAppearance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Syarat dan Ketentuan"
+        app:titleTextAppearance="@style/ToolbarTextAppearance" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/mToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/selamat_datang_di_fastrackedu"
+                style="@style/RegularHeadline"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/syarat_dan_ketentuan_berikut_mengatur_penggunaan_aplikasi_belajar_online_fastrackedu_dan_layanan_yang_kami_sediakan_dengan_mengakses_atau_menggunakan_layanan_kami_anda_setuju_untuk_mematuhi_syarat_dan_ketentuan_ini"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_1_penerimaan_syarat_dan_ketentuan"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_1_1_dengan_mendaftar_dan_menggunakan_layanan_fastrackedu_anda_setuju_untuk_terikat_dengan_syarat_dan_ketentuan_ini_jika_anda_tidak_setuju_dengan_syarat_dan_ketentuan_ini_harap_jangan_gunakan_layanan_kami"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_2_penggunaan_layanan"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_2_1_anda_setuju_untuk_menggunakan_layanan_kami_hanya_untuk_tujuan_yang_sah_dan_sesuai_dengan_hukum_yang_berlaku"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_3_akun_pengguna"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_3_1_anda_harus_membuat_akun_untuk_mengakses_fitur_tertentu_dari_layanan_kami_3_2_anda_bertanggung_jawab_atas_kerahasiaan_informasi_akun_anda_dan_semua_aktivitas_yang_terjadi_di_bawah_akun_anda_3_3_anda_setuju_untuk_memberikan_informasi_yang_akurat_lengkap_dan_terbaru_saat_mendaftar_dan_menggunakan_akun_anda"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_4_pembelian_course"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_4_1_anda_dapat_membeli_course_melalui_aplikasi_kami_harga_dan_ketersediaan_course_dapat_berubah_sewaktu_waktu_tanpa_pemberitahuan_4_2_anda_setuju_untuk_tidak_menggunakan_layanan_kami_untuk_melakukan_tindakan_yang_melanggar_hak_cipta_privasi_atau_hak_hak_lainnya_dari_pihak_ketiga"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_5_hak_kekayaan_intelektual"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_5_1_semua_konten_yang_tersedia_di_aplikasi_kami_termasuk_teks_gambar_video_dan_materi_kursus_adalah_milik_fastrackedu_atau_pemberi_lisensinya_5_2_anda_tidak_diperbolehkan_menyalin_mendistribusikan_atau_menggunakan_konten_kami_tanpa_izin_tertulis_dari_kami"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_6_privasi"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_6_1_kami_menghargai_privasi_anda_dan_berkomitmen_untuk_melindungi_informasi_pribadi_anda_sesuai_dengan_kebijakan_privasi_kami_6_2_dengan_menggunakan_layanan_kami_anda_menyetujui_pengumpulan_dan_penggunaan_informasi_anda_sebagaimana_diuraikan_dalam_kebijakan_privasi_kami"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_7_batasan_tanggung_jawab"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_7_1_fastrackedu_tidak_bertanggung_jawab_atas_kerusakan_langsung_tidak_langsung_insidental_atau_konsekuensial_yang_timbul_dari_penggunaan_atau_ketidakmampuan_untuk_menggunakan_layanan_kami_7_2_kami_tidak_menjamin_bahwa_layanan_kami_akan_bebas_dari_kesalahan_gangguan_atau_virus"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_8_perubahan_syarat_dan_ketentuan"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_8_1_kami_berhak_untuk_mengubah_syarat_dan_ketentuan_ini_kapan_saja_perubahan_akan_berlaku_segera_setelah_diposting_di_aplikasi_kami_8_2_anda_setuju_untuk_secara_berkala_meninjau_syarat_dan_ketentuan_ini_untuk_memastikan_bahwa_anda_menyadari_setiap_perubahan"
+                style="@style/RegularHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/_9_hukum_yang_berlaku"
+                style="@style/SemiBoldSubHeadline" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/_9_1_syarat_dan_ketentuan_ini_diatur_dan_ditafsirkan_sesuai_dengan_hukum_republik_indonesia_tanpa_memperhatikan_pertentangan_prinsip_prinsip_hukumnya"
+                style="@style/RegularHeadline" />
+
+            <CheckBox
+                android:id="@+id/checkBoxAgree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/saya_telah_setuju_dengan_syarat_dan_ketentuan"
+                style="@style/RegularSubHeadline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonAgree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setuju"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/primary"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/batal"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/primary" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,7 @@ package com.nizamsetiawan.app.fasttrackedu.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.nizamsetiawan.app.fasttrackedu.source.remote.response.User
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.LoginUser
 
 object Prefs {
     private lateinit var prefs: SharedPreferences
@@ -24,6 +24,7 @@ object Prefs {
     private const val KEY_PASSWORD = "key_password"
     private const val KEY_V = "key_v"
 
+
     val getUserId: String
         get() = prefs.getString(KEY_ID, "") ?: ""
     val getName: String
@@ -41,27 +42,37 @@ object Prefs {
     val getV: Int
         get() = prefs.getInt(KEY_V, 0)
 
-    fun setLoginPrefs(user: User, token: String) {
+    fun setLoginPrefs(user: LoginUser, token: String) {
         editor.putString(KEY_ID, user.id)
         editor.putString(KEY_NAME, user.name)
-        editor.putString(KEY_EMAIL, user.email)
+//        editor.putString(KEY_EMAIL, user.email)
         editor.putString(KEY_TOKEN, token)
         editor.putString(KEY_ROLE, user.role)
         editor.putString(KEY_MEMBER_TYPE, user.memberType?.toString())
-        editor.putString(KEY_PASSWORD, user.password)
+//        editor.putString(KEY_PASSWORD, user.password)
         editor.putInt(KEY_V, user.v ?: 0)
         editor.apply()
     }
 
-    fun clearAuthPrefs() {
+    fun fastTrackAuthPrefs() {
         editor.remove(KEY_ID)
         editor.remove(KEY_NAME)
-        editor.remove(KEY_EMAIL)
+//        editor.remove(KEY_EMAIL)
         editor.remove(KEY_TOKEN)
         editor.remove(KEY_ROLE)
         editor.remove(KEY_MEMBER_TYPE)
-        editor.remove(KEY_PASSWORD)
+//        editor.remove(KEY_PASSWORD)
         editor.remove(KEY_V)
+        editor.apply()
+    }
+    fun setRememberMe(email: String, password: String) {
+        editor.putString(KEY_EMAIL, email)
+        editor.putString(KEY_PASSWORD, password)
+        editor.apply()
+    }
+    fun clearRememberMe() {
+        editor.remove(KEY_EMAIL)
+        editor.remove(KEY_PASSWORD)
         editor.apply()
     }
 }

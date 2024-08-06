@@ -18,6 +18,18 @@
     <color name="background">#FEFEFE</color>
     <color name="bgPrimary">#E6E8EC</color>
 
+    <color name="border">#8E95A2</color>
+
+<!--    color member-->
+    <color name="basicMemberGreen">#86EFAD</color>
+    <color name="basicMemberRed"> #FCA5A5</color>
+    <color name="exclusiveMemberBlue">#1D64D8</color>
+    <color name="regulerMemberYellow">#FAC215</color>
+<!--background color member-->
+    <color name="bg_basicMemberGreen">#F0FDF5</color>
+    <color name="bg_basicMemberRed"> #FEF2F2</color>
+    <color name="bg_exclusiveMemberBlue">#EFF5FF</color>
+    <color name="bg_regulerMemberYellow">#FEF9E8</color>
 
 
 </resources>

@@ -43,10 +43,11 @@
     <style name="RegularHeadline" parent="BoldHeadlineStyle">
         <item name="fontFamily">@font/poppins_regular</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textprimary</item>
     </style>
 
     <style name="RegularSubHeadline" parent="Base.Theme.FastTrackEdu">
-        <item name="android:textColor">@color/textprimary</item>
+        <item name="android:textColor">@color/textsecondary</item>
         <item name="fontFamily">@font/poppins_regular</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -70,6 +71,7 @@
         <!-- Layout Size -->
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+
         <!-- Box Corner Radius -->
         <item name="boxCornerRadiusTopEnd">5dp</item>
         <item name="boxCornerRadiusBottomStart">5dp</item>
@@ -81,11 +83,54 @@
 
     <!-- TextInputEditText -->
     <style name="TextInputEditText" parent="RegularHeadline" >
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:textSize">16sp</item>
         <!-- Layout Size -->
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
         <item name="android:textColor">@color/textprimary</item>
         </style>
+
+    <!--Button style-->
+    <style name="ButtonStyle">
+        <item name="android:layout_marginEnd">28dp</item>
+        <item name="android:layout_marginStart">28dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="ButtonStyle.Secondary" parent="ButtonStyle">
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="rippleColor">@color/border</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:layout_gravity">start</item>
+        <item name="android:gravity">start</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="chipIconTint">@color/primary</item>
+    </style>
+
+    <style name="ButtonStyle.Secondary.WithIcon" parent="ButtonStyle.Secondary">
+        <item name="icon">@drawable/ic_google</item>
+        <item name="android:text">Masuk dengan Google</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">24dp</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
 
 
 

@@ -1,4 +1,4 @@
-package com.nizamsetiawan.app.fasttrackedu.views.auth
+package com.nizamsetiawan.app.fasttrackedu.views.onboarding
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -17,7 +17,6 @@ import com.nizamsetiawan.app.fasttrackedu.databinding.ActivitySplashScreenBindin
 import com.nizamsetiawan.app.fasttrackedu.utils.Constant
 import com.nizamsetiawan.app.fasttrackedu.utils.Prefs
 import com.nizamsetiawan.app.fasttrackedu.views.BottomNavigationBarActivity
-import com.nizamsetiawan.app.fasttrackedu.views.dashboard.DashboardFragment
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
@@ -44,7 +43,7 @@ class SplashScreenActivity : CoreActivity<ActivitySplashScreenBinding>() {
         lifecycleScope.launch {
             delay(Constant.SPLASH_SCREEN_DURATION.seconds)
             if (Prefs.getToken.isEmpty()) {
-                startActivity(Intent(this@SplashScreenActivity, DashboardFragment::class.java))
+                startActivity(Intent(this@SplashScreenActivity, OnboardingActivity::class.java))
                 finish()
             } else {
                 startActivity(Intent(this@SplashScreenActivity, BottomNavigationBarActivity::class.java))

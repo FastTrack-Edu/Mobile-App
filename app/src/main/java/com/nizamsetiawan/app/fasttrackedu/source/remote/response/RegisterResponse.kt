@@ -2,10 +2,10 @@ package com.nizamsetiawan.app.fasttrackedu.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse(
+data class RegisterResponse(
 
 	@field:SerializedName("user")
-	val user: LoginUser? = null,
+	val user: RegisterUser? = null,
 
 	@field:SerializedName("token")
 	val token: String? = null,
@@ -14,7 +14,7 @@ data class LoginResponse(
 	val error: String? = null
 )
 
-data class LoginUser(
+data class RegisterUser(
 
 	@field:SerializedName("member_type")
 	val memberType: Any? = null,
@@ -35,6 +35,5 @@ data class LoginUser(
 	val id: String? = null,
 
 	@field:SerializedName("email")
-	val email: String? = null,
-
+	val email: String? = null
 )

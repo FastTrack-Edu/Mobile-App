@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import com.nizamsetiawan.app.fasttrackedu.core.CoreActivity
 import com.nizamsetiawan.app.fasttrackedu.databinding.ActivityMainBinding
-import com.nizamsetiawan.app.fasttrackedu.views.auth.SplashScreenActivity
+import com.nizamsetiawan.app.fasttrackedu.views.onboarding.SplashScreenActivity
 
 class MainActivity : CoreActivity<ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
