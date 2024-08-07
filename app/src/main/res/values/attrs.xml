@@ -6,10 +6,9 @@
         <attr name="isPasswordTypeInput" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="CustomCardDashboard">
+    <declare-styleable name="CustomCardMenu">
         <attr name="iconSrc" format="reference" />
         <attr name="headlineText" format="string" />
-        <attr name="subHeadlineText" format="string" />
     </declare-styleable>
 
     <declare-styleable name="CustomToolbar">

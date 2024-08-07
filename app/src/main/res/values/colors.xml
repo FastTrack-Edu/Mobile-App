@@ -17,8 +17,10 @@
 
     <color name="background">#FEFEFE</color>
     <color name="bgPrimary">#E6E8EC</color>
+    <color name="bgSecondary">#F6F7F9</color>
 
     <color name="border">#8E95A2</color>
+    <color name="borderline">#D8DBDF</color>
 
 <!--    color member-->
     <color name="basicMemberGreen">#86EFAD</color>

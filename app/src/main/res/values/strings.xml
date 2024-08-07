@@ -56,4 +56,7 @@
     <string name="setuju">Setuju</string>
     <string name="batal">Batal</string>
     <string name="saya_telah_setuju_dengan_syarat_dan_ketentuan">Saya telah setuju dengan Syarat dan Ketentuan</string>
+    <string name="title_register">Daftar</string>
+    <string name="video_lesson_populer">Video Lesson Populer</string>
+    <string name="view_more">Lihat semua</string>
 </resources>
