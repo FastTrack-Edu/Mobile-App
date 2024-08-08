@@ -8,6 +8,7 @@ import com.nizamsetiawan.app.fasttrackedu.source.remote.request.LoginRequest
 import com.nizamsetiawan.app.fasttrackedu.source.remote.request.RegisterRequest
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.LoginResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.RegisterResponse
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
 import com.nizamsetiawan.app.fasttrackedu.utils.Prefs
 import com.nizamsetiawan.app.fasttrackedu.utils.ResponseState
 import kotlinx.coroutines.flow.Flow
@@ -84,6 +85,18 @@ class AppRepository(
         } catch (e: Exception) {
             e.printStackTrace()
             false
+        }
+    }
+
+    //Video Lesson
+    fun getVideoLessons(): Flow<ResponseState<List<VideoLessonResponse>>> = flow {
+        try {
+            emit(ResponseState.Loading)
+            val response = remoteDataSource.videoLessons()
+            emit(ResponseState.Success(response))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(ResponseState.Error(e.message.toString()))
         }
     }
 

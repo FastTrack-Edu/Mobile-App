@@ -59,4 +59,5 @@
     <string name="title_register">Daftar</string>
     <string name="video_lesson_populer">Video Lesson Populer</string>
     <string name="view_more">Lihat semua</string>
+    <string name="event_populer">Event Terkini</string>
 </resources>

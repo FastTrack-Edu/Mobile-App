@@ -4,7 +4,9 @@ import com.nizamsetiawan.app.fasttrackedu.source.remote.request.LoginRequest
 import com.nizamsetiawan.app.fasttrackedu.source.remote.request.RegisterRequest
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.LoginResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.RegisterResponse
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -13,5 +15,9 @@ interface ApiService {
 
     @POST("register")
     suspend fun register(@Body registerRequest: RegisterRequest): RegisterResponse
+
+    //Video Lesson
+    @GET("video-lesson")
+    suspend fun getVideoLessons(): List<VideoLessonResponse>
 
 }

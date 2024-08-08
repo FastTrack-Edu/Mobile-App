@@ -98,10 +98,9 @@
             android:layout_height="wrap_content"
             app:headlineText="Video Lesson"
             app:iconSrc="@drawable/ic_video_lesson"
-            app:layout_constraintEnd_toStartOf="@+id/card_mentoring"
+            app:layout_constraintEnd_toStartOf="@id/card_mentoring"
             app:layout_constraintStart_toEndOf="@id/card_course"
-            app:layout_constraintTop_toTopOf="@id/card_course"
-            />
+            app:layout_constraintTop_toTopOf="@id/card_course" />
 
         <com.nizamsetiawan.app.fasttrackedu.components.CustomCardMenu
             android:id="@+id/card_mentoring"
@@ -109,10 +108,9 @@
             android:layout_height="wrap_content"
             app:headlineText="Mentoring Private"
             app:iconSrc="@drawable/ic_mentoring_private"
-            app:layout_constraintEnd_toStartOf="@+id/card_blog"
+            app:layout_constraintEnd_toStartOf="@id/card_blog"
             app:layout_constraintStart_toEndOf="@id/card_video_lesson"
-            app:layout_constraintTop_toTopOf="@id/card_video_lesson"
-            />
+            app:layout_constraintTop_toTopOf="@id/card_video_lesson" />
 
         <com.nizamsetiawan.app.fasttrackedu.components.CustomCardMenu
             android:id="@+id/card_blog"
@@ -122,8 +120,7 @@
             app:iconSrc="@drawable/ic_blog"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/card_mentoring"
-            app:layout_constraintTop_toTopOf="@id/card_mentoring"
-            />
+            app:layout_constraintTop_toTopOf="@id/card_mentoring" />
 
         <TextView
             android:id="@+id/tv_headline_2"
@@ -134,8 +131,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_blog" />
 
-
-
         <TextView
             android:id="@+id/view_more"
             style="@style/RegularSubHeadline"
@@ -145,6 +140,46 @@
             app:layout_constraintStart_toEndOf="@id/tv_headline_2"
             app:layout_constraintTop_toTopOf="@id/tv_headline_2" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video_lesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_video_lesson" />
+
+        <TextView
+            android:id="@+id/tv_headline_3"
+            style="@style/RegularHeadline"
+            android:layout_marginStart="27dp"
+            android:text="@string/event_populer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_video_lesson" />
+
+        <TextView
+            android:id="@+id/view_more_1"
+            style="@style/RegularSubHeadline"
+            android:text="@string/view_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.874"
+            app:layout_constraintStart_toEndOf="@id/tv_headline_3"
+            app:layout_constraintTop_toTopOf="@id/tv_headline_3" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_event_populer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline_3"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_event" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

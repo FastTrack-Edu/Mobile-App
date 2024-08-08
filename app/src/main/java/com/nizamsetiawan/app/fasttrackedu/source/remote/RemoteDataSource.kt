@@ -14,5 +14,7 @@ class RemoteDataSource(private val api: ApiService) {
         registerRequest: RegisterRequest,
     ) = api.register(registerRequest)
 
+    suspend fun videoLessons() = api.getVideoLessons()
+
 
 }

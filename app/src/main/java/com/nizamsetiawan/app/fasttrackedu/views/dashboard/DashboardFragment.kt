@@ -4,57 +4,83 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.nizamsetiawan.app.fasttrackedu.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.nizamsetiawan.app.fasttrackedu.core.CoreFragment
+import com.nizamsetiawan.app.fasttrackedu.databinding.FragmentDashboardBinding
+import com.nizamsetiawan.app.fasttrackedu.di.modules.KoinModules
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
+import com.nizamsetiawan.app.fasttrackedu.utils.ResponseState
+import com.nizamsetiawan.app.fasttrackedu.views.dashboard.adapters.VideoLessonAdapter
+import com.nizamsetiawan.app.fasttrackedu.views.dashboard.viewmodels.DashboardViewModel
+import org.koin.android.ext.android.inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class DashboardFragment : CoreFragment<FragmentDashboardBinding>(),
+    VideoLessonAdapter.OnVideoLessonClickListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DashboardFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class DashboardFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val dashboardViewModel: DashboardViewModel by inject()
+    private val videoLessonAdapter = VideoLessonAdapter(this)
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        // Initialize Koin modules if needed here
+        KoinModules.reloadModule()
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+    override fun onResume() {
+        super.onResume()
+        dashboardViewModel.getVideoLesson()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DashboardFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DashboardFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // Setup views or observe LiveData here
+        setupButton()
+        setupRecyclerView()
+        setupObservers()
+    }
+
+    override fun setupFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): FragmentDashboardBinding = FragmentDashboardBinding.inflate(inflater, container, false)
+
+    override fun onVideoLessonButtonClicked(item: VideoLessonResponse) {
+        // Handle video lesson button click event
+    }
+
+    private fun setupButton() {
+        binding.apply {
+            cardMentoring.setOnClickListener {}
+            cardCourse.setOnClickListener { }
+            cardVideoLesson.setOnClickListener { }
+            cardBlog.setOnClickListener { }
+        }
+    }
+    private fun setupRecyclerView() {
+        binding.rvVideoLesson.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvVideoLesson.adapter = videoLessonAdapter
+
+    }
+
+    private fun setupObservers() {
+        binding.apply {
+            dashboardViewModel.videoLesson.observe(viewLifecycleOwner){ state ->
+                when(state){
+                    is ResponseState.Loading ->{
+
+                    }
+                    is ResponseState.Success ->{
+                        videoLessonAdapter.updateItems(state.data)
+                    }
+                    is ResponseState.Error -> {
+                    }
                 }
+
             }
+        }
     }
 }
