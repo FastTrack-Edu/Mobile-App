@@ -27,6 +27,18 @@
         android:theme="@style/Theme.FastTrackEdu"
         tools:targetApi="31">
         <activity
+            android:name=".views.dashboard.SearchResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.dashboard.PaymentVideoLessonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.dashboard.DetailVideoLessonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.dashboard.VideoLessonActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.auth.TermsnServiceActivity"
             android:exported="false" />
         <activity

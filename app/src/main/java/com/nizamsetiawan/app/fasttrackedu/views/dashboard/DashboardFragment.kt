@@ -1,5 +1,6 @@
 package com.nizamsetiawan.app.fasttrackedu.views.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -56,8 +57,17 @@ class DashboardFragment : CoreFragment<FragmentDashboardBinding>(),
         binding.apply {
             cardMentoring.setOnClickListener {}
             cardCourse.setOnClickListener { }
-            cardVideoLesson.setOnClickListener { }
+            cardVideoLesson.setOnClickListener {
+                startActivity(Intent(requireContext(), VideoLessonActivity::class.java))
+            }
             cardBlog.setOnClickListener { }
+            viewMoreVideoLesson.setOnClickListener {
+                startActivity(Intent(requireContext(), VideoLessonActivity::class.java))
+            }
+            viewMoreEventPopuler.setOnClickListener {
+                //navigate fragment event populer
+                startActivity(Intent(requireContext(), DetailVideoLessonActivity::class.java))
+            }
         }
     }
     private fun setupRecyclerView() {

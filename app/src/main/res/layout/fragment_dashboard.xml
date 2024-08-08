@@ -132,7 +132,7 @@
             app:layout_constraintTop_toBottomOf="@id/card_blog" />
 
         <TextView
-            android:id="@+id/view_more"
+            android:id="@+id/view_more_video_lesson"
             style="@style/RegularSubHeadline"
             android:text="@string/view_more"
             app:layout_constraintEnd_toEndOf="parent"
@@ -161,7 +161,7 @@
             app:layout_constraintTop_toBottomOf="@id/rv_video_lesson" />
 
         <TextView
-            android:id="@+id/view_more_1"
+            android:id="@+id/view_more_event_populer"
             style="@style/RegularSubHeadline"
             android:text="@string/view_more"
             app:layout_constraintEnd_toEndOf="parent"

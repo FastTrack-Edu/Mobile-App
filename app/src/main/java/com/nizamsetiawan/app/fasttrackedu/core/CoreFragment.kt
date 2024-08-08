@@ -33,4 +33,15 @@ abstract class CoreFragment<VB : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): VB
+
+//    protected fun setupToolbar(toolbar: MaterialToolbar, onNavigationClick: (() -> Unit)? = null) {
+//        (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
+//        toolbar.apply {
+//            setNavigationIcon(R.drawable.ic_arrow_back)
+//            setNavigationOnClickListener {
+//                onNavigationClick?.invoke() ?: (activity as? AppCompatActivity)?.onBackPressed()
+//            }
+//        }
+//    }
+
 }

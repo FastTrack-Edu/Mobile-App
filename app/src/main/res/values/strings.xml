@@ -60,4 +60,9 @@
     <string name="video_lesson_populer">Video Lesson Populer</string>
     <string name="view_more">Lihat semua</string>
     <string name="event_populer">Event Terkini</string>
+    <string name="pembayaran">Pembayaran</string>
+    <string name="video_lesson">Video Lesson</string>
+    <string name="daftar_sekarang">Daftar Sekarang</string>
+    <string name="title_empty_data">Anda Belum Bergabung Keprogram Fastrack.Edu</string>
+    <string name="description_empty_data">Silahkan pilih program dan mulai perjalan prestasimu bersama Fastrack.Edu</string>
 </resources>

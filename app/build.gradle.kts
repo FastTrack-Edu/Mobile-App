@@ -92,4 +92,6 @@ dependencies {
     implementation(libs.glide)
     //viewpager2
     implementation(libs.androidx.viewpager2)
+    //exoplayer
+    implementation (libs.exoplayer)
 }
