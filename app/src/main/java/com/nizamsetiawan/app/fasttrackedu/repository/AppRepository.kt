@@ -99,5 +99,16 @@ class AppRepository(
             emit(ResponseState.Error(e.message.toString()))
         }
     }
+    //Detail Video Lesson
+    fun getDetailVideoLesson(lessonId : String): Flow<ResponseState<VideoLessonResponse>> = flow {
+        try {
+            emit(ResponseState.Loading)
+            val response = remoteDataSource.detailVideoLesson(lessonId)
+            emit(ResponseState.Success(response))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(ResponseState.Error(e.message.toString()))
+        }
+    }
 
 }

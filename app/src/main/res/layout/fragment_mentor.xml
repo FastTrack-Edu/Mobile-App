@@ -1,14 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".views.dashboard.tabLayouts.detailVideoLesson.MentorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_desc"
+            style="@style/MediumHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mentor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_user_profile"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_profile_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_desc"/>
+
+        <TextView
+            android:id="@+id/tv_greeting"
+            style="@style/MediumHeadline"
+            android:layout_marginStart="10dp"
+            android:text="@string/username"
+            app:layout_constraintStart_toEndOf="@id/iv_user_profile"
+            app:layout_constraintTop_toTopOf="@id/iv_user_profile"/>
+
+        <ImageView
+            android:id="@+id/status_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_basic_member"
+            app:layout_constraintStart_toEndOf="@id/iv_user_profile"
+            app:layout_constraintTop_toTopOf="@id/iv_user_profile"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            style="@style/RegularSubHeadline"
+            android:justificationMode="inter_word"
+            android:text="Video ini akan membahas skema validitas internal dan eksternal dalam karya tulis ilmiah, yang bertujuan memastikan kredibilitas dari temuan penelitian. Kedua aspek ini penting untuk memastikan relevansi penelitian, sehingga hasil yang diperoleh dapat dipercaya dan diterapkan dalam konteks yang lebih luas."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/status_member" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

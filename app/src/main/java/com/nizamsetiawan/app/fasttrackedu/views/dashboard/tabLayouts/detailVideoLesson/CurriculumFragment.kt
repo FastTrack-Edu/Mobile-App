@@ -4,58 +4,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.nizamsetiawan.app.fasttrackedu.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.nizamsetiawan.app.fasttrackedu.core.CoreFragment
+import com.nizamsetiawan.app.fasttrackedu.databinding.FragmentCurriculumBinding
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CurriculumFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+class CurriculumFragment : CoreFragment<FragmentCurriculumBinding>() {
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-class CurriculumFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var videoLessonData: VideoLessonResponse? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    fun setData(data: VideoLessonResponse) {
+        videoLessonData = data
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun setupFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_curriculum, container, false)
+    ): FragmentCurriculumBinding =
+        FragmentCurriculumBinding.inflate(inflater, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CurriculumFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CurriculumFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun setupRecyclerView() {
+        videoLessonData?.let { data ->
+            // Filter out null values from the list
+            val curriculumList = data.curriculums?.filterNotNull() ?: emptyList()
+            val adapter = CurriculumAdapter(curriculumList)
+
+            binding.recyclerView.apply {
+                layoutManager = LinearLayoutManager(context)
+                this.adapter = adapter
             }
+        }
     }
 }

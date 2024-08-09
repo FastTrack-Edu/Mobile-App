@@ -8,6 +8,7 @@ import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResp
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiService {
     @POST("login")
@@ -19,5 +20,10 @@ interface ApiService {
     //Video Lesson
     @GET("video-lesson")
     suspend fun getVideoLessons(): List<VideoLessonResponse>
+
+    //Detail Video Lesson
+    @GET("video-lesson/{lessonId}")
+    suspend fun getVideoLessonById(@Path("lessonId") id: String): VideoLessonResponse
+
 
 }

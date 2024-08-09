@@ -16,5 +16,7 @@ class RemoteDataSource(private val api: ApiService) {
 
     suspend fun videoLessons() = api.getVideoLessons()
 
+    suspend fun detailVideoLesson(lessonId: String) = api.getVideoLessonById(lessonId)
+
 
 }
