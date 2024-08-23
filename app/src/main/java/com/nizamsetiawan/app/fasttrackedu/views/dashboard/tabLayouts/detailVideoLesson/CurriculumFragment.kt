@@ -1,6 +1,7 @@
 package com.nizamsetiawan.app.fasttrackedu.views.dashboard.tabLayouts.detailVideoLesson
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nizamsetiawan.app.fasttrackedu.core.CoreFragment
 import com.nizamsetiawan.app.fasttrackedu.databinding.FragmentCurriculumBinding
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
+import com.nizamsetiawan.app.fasttrackedu.views.dashboard.tabLayouts.detailVideoLesson.adapter.CurriculumAdapter
 
 class CurriculumFragment : CoreFragment<FragmentCurriculumBinding>() {
 
@@ -26,15 +28,18 @@ class CurriculumFragment : CoreFragment<FragmentCurriculumBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.d("CurriculumFragment", "Binding initialized: ${binding != null}")
+
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
         videoLessonData?.let { data ->
-            // Filter out null values from the list
             val curriculumList = data.curriculums?.filterNotNull() ?: emptyList()
-            val adapter = CurriculumAdapter(curriculumList)
+            Log.d("CurriculumFragment", "Curriculum List Size: ${curriculumList.size}")
 
+            val adapter = CurriculumAdapter(curriculumList)
             binding.recyclerView.apply {
                 layoutManager = LinearLayoutManager(context)
                 this.adapter = adapter

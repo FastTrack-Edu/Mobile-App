@@ -61,7 +61,7 @@ class DetailVideoLessonActivity : CoreActivity<ActivityDetailVideoLessonBinding>
                 is ResponseState.Success -> {
                     val data = response.data
                     binding.apply {
-                        tvTitleName.text = data.name
+                        tvTitleName.text = data.title
                         Glide.with(root)
                             .load("${BuildConfig.BASE_URL}${data.thumbnail}")
                             .into(playerView)

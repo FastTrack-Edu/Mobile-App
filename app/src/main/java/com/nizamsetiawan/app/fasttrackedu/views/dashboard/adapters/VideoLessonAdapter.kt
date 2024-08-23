@@ -23,7 +23,7 @@ class VideoLessonAdapter(private val listener: OnVideoLessonClickListener? = nul
                 Glide.with(root)
                     .load("${BuildConfig.BASE_URL}${item.thumbnail}")
                     .into(ivTumbnail)
-                tvTitleName.text = item.name
+                tvTitleName.text = item.title
                 tvRating.text = item.rating.toString()
                 tvPrice.text = item.discountPrice.toString()
                 tvDiscountedPrice.text = item.price.toString()
@@ -31,7 +31,6 @@ class VideoLessonAdapter(private val listener: OnVideoLessonClickListener? = nul
                     .load("${BuildConfig.BASE_URL}${item.mentor?.photo}")
                     .into(ivProfile)
                 tvName.text = item.mentor?.name
-                //example
                 tvTime.text = item.discount.toString()
                 tvJoined.text = item.enrolledMembers?.size.toString() + " Bergabung"
                 tvAdvanced.text = item.level

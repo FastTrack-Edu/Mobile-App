@@ -17,7 +17,7 @@ data class VideoLessonResponse(
 	val discountPrice: Int? = null,
 
 	@field:SerializedName("rating")
-	val rating: Int? = null,
+	val rating: Any? = null,
 
 	@field:SerializedName("description")
 	val description: String? = null,
@@ -28,8 +28,11 @@ data class VideoLessonResponse(
 	@field:SerializedName("video")
 	val video: String? = null,
 
+	@field:SerializedName("title")
+	val title: String? = null,
+
 	@field:SerializedName("reviews")
-	val reviews: List<String?>? = null,
+	val reviews: List<ReviewsItem?>? = null,
 
 	@field:SerializedName("price")
 	val price: Int? = null,
@@ -40,29 +43,41 @@ data class VideoLessonResponse(
 	@field:SerializedName("__v")
 	val v: Int? = null,
 
-	@field:SerializedName("name")
-	val name: String? = null,
-
 	@field:SerializedName("curriculums")
 	val curriculums: List<CurriculumsItem?>? = null,
 
 	@field:SerializedName("_id")
-	val id: String? = null
+	val id: String? = null,
+
+	@field:SerializedName("category")
+	val category: String? = null
 )
 
-data class SubcurriculumsItem(
+data class ReviewsItem(
+
+	@field:SerializedName("review")
+	val review: String? = null,
 
 	@field:SerializedName("__v")
 	val v: Int? = null,
 
-	@field:SerializedName("name")
-	val name: String? = null,
+	@field:SerializedName("rating")
+	val rating: Int? = null,
+
+	@field:SerializedName("course")
+	val course: Any? = null,
+
+	@field:SerializedName("mentoring")
+	val mentoring: Any? = null,
 
 	@field:SerializedName("_id")
 	val id: String? = null,
 
-	@field:SerializedName("curriculum")
-	val curriculum: String? = null
+	@field:SerializedName("user")
+	val user: String? = null,
+
+	@field:SerializedName("video_lesson")
+	val videoLesson: String? = null
 )
 
 data class CurriculumsItem(
@@ -85,11 +100,17 @@ data class CurriculumsItem(
 
 data class Mentor(
 
+	@field:SerializedName("courses")
+	val courses: List<String?>? = null,
+
 	@field:SerializedName("video_lessons")
 	val videoLessons: List<String?>? = null,
 
 	@field:SerializedName("__v")
 	val v: Int? = null,
+
+	@field:SerializedName("mentorings")
+	val mentorings: List<Any?>? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
@@ -108,4 +129,19 @@ data class Mentor(
 
 	@field:SerializedName("linkedin")
 	val linkedin: String? = null
+)
+
+data class SubcurriculumsItem(
+
+	@field:SerializedName("__v")
+	val v: Int? = null,
+
+	@field:SerializedName("name")
+	val name: String? = null,
+
+	@field:SerializedName("_id")
+	val id: String? = null,
+
+	@field:SerializedName("curriculum")
+	val curriculum: String? = null
 )

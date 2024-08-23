@@ -65,7 +65,6 @@ class DashboardFragment : CoreFragment<FragmentDashboardBinding>(),
                 startActivity(Intent(requireContext(), VideoLessonActivity::class.java))
             }
             viewMoreEventPopuler.setOnClickListener {
-                //navigate fragment event populer
                 startActivity(Intent(requireContext(), DetailVideoLessonActivity::class.java))
             }
         }
