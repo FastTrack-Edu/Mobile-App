@@ -65,4 +65,5 @@
     <string name="daftar_sekarang">Daftar Sekarang</string>
     <string name="title_empty_data">Anda Belum Bergabung Keprogram Fastrack.Edu</string>
     <string name="description_empty_data">Silahkan pilih program dan mulai perjalan prestasimu bersama Fastrack.Edu</string>
+    <string name="event">Detail Event</string>
 </resources>

@@ -6,6 +6,7 @@ import com.nizamsetiawan.app.fasttrackedu.source.local.LocalDataSource
 import com.nizamsetiawan.app.fasttrackedu.source.remote.RemoteDataSource
 import com.nizamsetiawan.app.fasttrackedu.source.remote.request.LoginRequest
 import com.nizamsetiawan.app.fasttrackedu.source.remote.request.RegisterRequest
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.EventResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.LoginResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.RegisterResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
@@ -99,11 +100,36 @@ class AppRepository(
             emit(ResponseState.Error(e.message.toString()))
         }
     }
+
     //Detail Video Lesson
-    fun getDetailVideoLesson(lessonId : String): Flow<ResponseState<VideoLessonResponse>> = flow {
+    fun getDetailVideoLesson(lessonId: String): Flow<ResponseState<VideoLessonResponse>> = flow {
         try {
             emit(ResponseState.Loading)
             val response = remoteDataSource.detailVideoLesson(lessonId)
+            emit(ResponseState.Success(response))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(ResponseState.Error(e.message.toString()))
+        }
+    }
+
+    //event
+    fun getEvent(): Flow<ResponseState<List<EventResponse>>> = flow {
+        try {
+            emit(ResponseState.Loading)
+            val response = remoteDataSource.event()
+            emit(ResponseState.Success(response))
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emit(ResponseState.Error(e.message.toString()))
+        }
+    }
+
+    //Detail Event
+    fun getDetailEvent(eventId: String): Flow<ResponseState<EventResponse>> = flow {
+        try {
+            emit(ResponseState.Loading)
+            val response = remoteDataSource.detailEvent(eventId)
             emit(ResponseState.Success(response))
         } catch (e: Exception) {
             e.printStackTrace()

@@ -27,6 +27,9 @@
         android:theme="@style/Theme.FastTrackEdu"
         tools:targetApi="31">
         <activity
+            android:name=".views.event.DetailEventActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.dashboard.SearchResultActivity"
             android:exported="false" />
         <activity

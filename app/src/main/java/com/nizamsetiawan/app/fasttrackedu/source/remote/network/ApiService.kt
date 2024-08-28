@@ -2,6 +2,7 @@ package com.nizamsetiawan.app.fasttrackedu.source.remote.network
 
 import com.nizamsetiawan.app.fasttrackedu.source.remote.request.LoginRequest
 import com.nizamsetiawan.app.fasttrackedu.source.remote.request.RegisterRequest
+import com.nizamsetiawan.app.fasttrackedu.source.remote.response.EventResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.LoginResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.RegisterResponse
 import com.nizamsetiawan.app.fasttrackedu.source.remote.response.VideoLessonResponse
@@ -24,6 +25,14 @@ interface ApiService {
     //Detail Video Lesson
     @GET("video-lesson/{lessonId}")
     suspend fun getVideoLessonById(@Path("lessonId") id: String): VideoLessonResponse
+
+    //Event
+    @GET("event")
+    suspend fun getEvent() : List<EventResponse>
+
+    @GET("event/{eventId}")
+    suspend fun getEventById(@Path("eventId") id: String) : EventResponse
+
 
 
 }
